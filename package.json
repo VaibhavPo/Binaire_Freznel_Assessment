@@ -1,6 +1,6 @@
 {
   "name": "freznelai-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Terminal-based btop-style system monitor CLI application",
   "type": "module",
   "main": "src/index.jsx",
