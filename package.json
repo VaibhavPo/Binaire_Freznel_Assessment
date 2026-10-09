@@ -1,0 +1,16 @@
+{
+  "name": "freznelai-assessment-1",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@clack/prompts": "^1.8.1",
+    "chartli": "^1.0.0",
+    "dotenv": "^18.0.6",
+    "express": "^5.2.1",
+    "firebase": "^13.0.0",
+    "firebase-admin": "^14.5.0",
+    "ink": "^8.0.0",
+    "react": "^19.3.0",
+    "systeminformation": "^5.33.15"
+  }
+}
