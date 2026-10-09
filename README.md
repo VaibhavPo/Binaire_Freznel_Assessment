@@ -74,8 +74,9 @@ cd FreznelAI-Assessment-1
 npm install
 ```
 
-### Step 3: Configure Environment Variables
-Create or verify the `.env` file in the root directory:
+### Step 3: Configure Environment Variables & Firebase Credentials
+
+1. Create or verify the `.env` file in the root directory:
 ```env
 apiKey=your_firebase_api_key_here
 authDomain="your-app.firebaseapp.com"
@@ -83,7 +84,14 @@ projectId="your-project-id"
 appId="your-app-id"
 
 baseURL="http://127.0.0.1:3000"
+
+# (Optional) Stringified Firebase Admin Service Account JSON
+FIREBASE_CREDENTIALS='{"type":"service_account","project_id":"your-project-id",...}'
 ```
+
+2. **Firebase Admin Credentials Setup**:
+   - **Option A (File-based)**: Place your Firebase service account private key JSON file at `src/api/auth/config/admin-cred.json`.
+   - **Option B (Environment Variable / Production deployment)**: Set `FIREBASE_CREDENTIALS` in your `.env` or deployment platform (e.g. Render/Vercel) as a single-line stringified JSON of your service account key. The app (`firebaseAdmin.js` & npm startup scripts) automatically parses and writes this environment variable to `src/api/auth/config/admin-cred.json` on boot.
 
 ### Step 4: Run the Backend Server
 In your first terminal tab/window:
