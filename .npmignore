@@ -1,5 +1,15 @@
-node_modules
+# Exclude server / backend API code
+src/api/
+
+# Exclude sensitive environment and credential files
 .env
+*.env
 admin-cred.json
-src/api/auth/config/admin-cred.json
-.npmignore
+**/admin-cred.json
+token.json
+*.pem
+*.key
+
+# Development & node modules
+node_modules/
+.git/

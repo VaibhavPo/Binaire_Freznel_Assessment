@@ -1,5 +1,5 @@
 import 'dotenv/config';
-const baseURL = process.env.baseURL;
+const baseURL = process.env.baseURL || 'https://binaire-freznel-assessment-mqvs.onrender.com';
 
 async function fetchData(endpoint, token) {
 const response = await fetch(`${baseURL}${endpoint}`, {

@@ -18,8 +18,7 @@
     "README.md"
   ],
   "scripts": {
-    "start": "node -e \"if (process.env.FIREBASE_CREDENTIALS) fs.writeFileSync('./src/api/auth/config/admin-cred.json', process.env.FIREBASE_CREDENTIALS)\" && node bin/cli.js",
-    "server": "node -e \"if (process.env.FIREBASE_CREDENTIALS) fs.writeFileSync('./src/api/auth/config/admin-cred.json', process.env.FIREBASE_CREDENTIALS)\" && node src/api/server.js",
+    "start": "node bin/cli.js",
     "dev": "npx tsx src/index.jsx"
   },
   "engines": {
