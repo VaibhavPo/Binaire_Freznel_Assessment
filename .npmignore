@@ -1,0 +1,5 @@
+node_modules
+.env
+admin-cred.json
+src/api/auth/config/admin-cred.json
+.npmignore

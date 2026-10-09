@@ -55,16 +55,8 @@ export function MemDiskPanel({ memoryInfo, diskInfo, gpuInfo }) {
           <Text color="white"> {formatBytes(memoryInfo.commitEstimate ?? (memoryInfo.swap?.used + memoryInfo.used))}</Text>
         </Box>
 
-        <Box marginY={0}>
-          <Text color="gray">───────────────────────</Text>
-        </Box>
-
         <Box justifyContent="space-between">
-          <Text color="gray">GPU Shared: </Text>
-          <Text color="white">{formatBytes(primaryGpu?.vram ? primaryGpu.vram * 1024 * 1024 : memoryInfo.total / 2)}</Text>
-        </Box>
-        <Box justifyContent="space-between">
-          <Text color="gray">Used: </Text>
+          <Text color="gray">GPU Mem: </Text>
           <Text color="white">{formatBytes(primaryGpu?.memoryUsed ? primaryGpu.memoryUsed * 1024 * 1024 : 350 * 1024 * 1024)}</Text>
         </Box>
       </Box>

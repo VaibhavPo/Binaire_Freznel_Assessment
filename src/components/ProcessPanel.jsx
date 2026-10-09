@@ -47,19 +47,19 @@ export function ProcessPanel({ processes = [], maxRows = 7, sortBy = 'cpu', sele
         const cpuVal = p.cpu ?? 0;
 
         return (
-          <Box key={p.pid} justifyContent="space-between">
+          <Box key={p.pid} justifyContent="space-between" width="100%">
             <Text color={isSelected ? 'yellow' : 'gray'}>
-              {isSelected ? '▶' : ' '}{String(p.pid).padEnd(6)}
+              {isSelected ? '▶' : ' '}{String(p.pid).padEnd(6).slice(0, 6)}
             </Text>
             <Text bold color={isSelected ? 'yellow' : 'cyan'}>
-              {(p.name || '').slice(0, 13).padEnd(14)}
+              {(p.name || '').slice(0, 11).padEnd(12)}
             </Text>
-            <Text color="gray">{(p.command || p.name || '').slice(0, 17).padEnd(18)}</Text>
-            <Text color="green">{String(p.threads || 1).padEnd(8)}</Text>
-            <Text color="gray">{(p.user || 'SYSTEM').slice(0, 9).padEnd(10)}</Text>
-            <Text color="white">{memFormatted.padEnd(8)}</Text>
+            <Text color="gray">{(p.command || p.name || '').slice(0, 14).padEnd(15)}</Text>
+            <Text color="green">{String(p.threads || 1).padEnd(6).slice(0, 6)}</Text>
+            <Text color="gray">{(p.user || 'SYSTEM').slice(0, 8).padEnd(9)}</Text>
+            <Text color="white">{memFormatted.padEnd(7).slice(0, 7)}</Text>
             <Text color={percentColor(cpuVal)}>
-              {formatPercent(cpuVal).padStart(5)} {renderBar(cpuVal, 3)}
+              {formatPercent(cpuVal).padStart(5)} {renderBar(cpuVal, 2)}
             </Text>
           </Box>
         );

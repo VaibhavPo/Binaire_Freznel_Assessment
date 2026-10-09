@@ -1,7 +1,25 @@
 {
-  "name": "freznelai-assessment-1",
+  "name": "freznelai-cli",
   "version": "1.0.0",
+  "description": "Terminal-based btop-style system monitor CLI application",
   "type": "module",
+  "main": "src/index.jsx",
+  "bin": {
+    "freznel-monitor": "./bin/cli.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md"
+  ],
+  "scripts": {
+    "start": "node bin/cli.js",
+    "server": "node src/api/server.js",
+    "dev": "npx tsx src/index.jsx"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "dependencies": {
     "@clack/prompts": "^1.8.1",
     "chartli": "^1.0.0",
@@ -12,5 +30,8 @@
     "ink": "^8.0.0",
     "react": "^19.3.0",
     "systeminformation": "^5.33.15"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.0"
   }
 }

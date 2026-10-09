@@ -17,9 +17,11 @@ export function App({ token }) {
   // Global keyboard shortcuts (Ctrl+C, q to exit; Up/Down arrows to scroll processes)
   useInput((input, key) => {
     if (key.ctrl && input === 'c') {
+      process.stdout.write('\x1b[?1049l\x1b[?25h');
       process.exit(0);
     }
     if (input === 'q' || input === 'Q') {
+      process.stdout.write('\x1b[?1049l\x1b[?25h');
       process.exit(0);
     }
     const procCount = snapshot?.processes?.length ?? 1;
@@ -122,6 +124,10 @@ export function App({ token }) {
   }
 
   const termWidth = stdout?.columns ?? 100;
+  const termRows = stdout?.rows ?? 30;
+
+  // Keep total dashboard lines well below terminal rows to prevent any jitter/scrolling on keypress
+  const maxProcRows = Math.max(3, Math.min(6, termRows - 24));
 
   return (
     <Box flexDirection="column" width="100%">
@@ -156,7 +162,7 @@ export function App({ token }) {
         <Box flexDirection="column" width="52%" flexGrow={1}>
           <ProcessPanel
             processes={snapshot.processes}
-            maxRows={7}
+            maxRows={maxProcRows}
             selectedIndex={selectedIndex}
           />
         </Box>
