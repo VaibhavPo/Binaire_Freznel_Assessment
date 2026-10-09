@@ -77,10 +77,10 @@ npm install
 ### Step 3: Configure Environment Variables
 Create or verify the `.env` file in the root directory:
 ```env
-apiKey=AIzaSyAj6FbmQqnvGNOFSMufzKJXEKvHA691zp0
-authDomain="frenzelai-assignment.firebaseapp.com"
-projectId="frenzelai-assignment"
-appId="1:107899362555:web:30da93b631307d916ea45e"
+apiKey=your_firebase_api_key_here
+authDomain="your-app.firebaseapp.com"
+projectId="your-project-id"
+appId="your-app-id"
 
 baseURL="http://127.0.0.1:3000"
 ```

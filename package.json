@@ -9,7 +9,12 @@
   },
   "files": [
     "bin",
-    "src",
+    "src/components",
+    "src/hooks",
+    "src/pages",
+    "src/utils",
+    "src/App.jsx",
+    "src/index.jsx",
     "README.md"
   ],
   "scripts": {

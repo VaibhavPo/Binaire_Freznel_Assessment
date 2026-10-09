@@ -1,3 +1,5 @@
 node_modules
 admin-cred.json
+**/admin-cred.json
 .env
+token.json
